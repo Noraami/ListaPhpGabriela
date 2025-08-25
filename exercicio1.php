@@ -6,15 +6,15 @@
     <title>Exercício 01 - Par ou Ímpar</title>
 </head>
 <body>
-     <form method="POST" action="">
+     <form method="POST">
         <label for="numero">Digite um número:</label>
         <input type="number" id="numero" name="numero" required>
-        <button type="submit" name="verifcar_par_impar">Verificar</button>
+        <button type="submit" id="vpi" name="vpi">Verificar</button>
     </form>
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['verificar_par_impar'])) {
+        if (isset($_POST['vpi'])) {
             $numero = filter_var($_POST['numero'], FILTER_VALIDATE_INT);
             if ($numero === false) {
                 echo "Número inválido!";

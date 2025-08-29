@@ -15,7 +15,7 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['v'])) {
-            $numero = filter_var($_POST['n']);
+            $numero = filter_var($_POST['n'], FILTER_VALIDATE_INT);
             if ($numero === false) {
                 echo "Número inválido!";
             } else {
